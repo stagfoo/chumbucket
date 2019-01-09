@@ -1,22 +1,14 @@
 {
-  "name": "yaeba",
+  "name": "stagfoo-typescript-glitch-base",
   "version": "1.0.0",
-  "description": "a aliexpress fashion app",
-  "main": "index.js",
+  "description": "an example glitch app with typescript and webpack",
+  "main": "src/index.ts",
   "scripts": {
     "start": "webpack-dev-server --content-base dist --hot --inline --mode=development",
     "build": "webpack -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stagfoo/yaeba.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/stagfoo/yaeba/issues"
-  },
-  "homepage": "https://github.com/stagfoo/yaeba#readme",
   "dependencies": {
     "@polymer/lit-element": "^0.6.5"
   },
