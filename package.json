@@ -1,0 +1,31 @@
+{
+  "name": "yaeba",
+  "version": "1.0.0",
+  "description": "a aliexpress fashion app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base dist --hot --inline --mode=development",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stagfoo/yaeba.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stagfoo/yaeba/issues"
+  },
+  "homepage": "https://github.com/stagfoo/yaeba#readme",
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.5"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
+}
