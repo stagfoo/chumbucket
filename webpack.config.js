@@ -53,6 +53,7 @@ module.exports = {
   ],
   devServer: {
     hot:true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    disableHostCheck: true
   },
 };
