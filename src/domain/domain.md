@@ -1,2 +1,0 @@
-# DomainObjects
-The DomainObjects should be separate from the UserInterface. The UI should have as little domain logic in it as possible, and the DomainObjects should have no UI in them. Following this pattern will make it easier to reuse your DomainObjects in a new application, and will reduce the duplication in your application.

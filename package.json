@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@polymer/lit-element": "^0.6.5"
+    "lit-element": "^2.1.0",
+    "lit-html": "^1.1.1",
+    "obake.js": "0.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",

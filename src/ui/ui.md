@@ -1,2 +1,0 @@
-# UserInterface
-The UserInterface should be separate from the DomainObjects. The UI should have as little domain logic in it as possible. Following this pattern will make it easier to put a new UI on your applications.

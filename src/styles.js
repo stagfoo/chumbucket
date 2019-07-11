@@ -1,10 +1,11 @@
 //your JSS styles
-const globalStyles = `
+export const globalStyles = `
 * {
   box-sizing: border-box;
 }
 
 body {
+  transition: opacity ease 0.3s;
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
 }
