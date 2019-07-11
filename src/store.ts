@@ -1,10 +1,15 @@
 
 export const defaultState = {
-  greeting: 'BoOOOoo!'
+  greeting: 'BoOOOoo!',
+  currentPage: { name: 'HOME_PAGE' }
  }
 
 export const reducers = {
-  CHANGE_GREETING: (state, propName, value) => {
+  updateCurrentPage: (state, propName, value) => {
+    state.currentPage = { name: value };
+    return new Promise(function(resolve, reject) { resolve(state) });
+  },
+  changeGreeting: (state, propName, value) => {
     //Do something to the state
     console.log(state, propName, value)
     state.greeting = value;

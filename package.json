@@ -1,5 +1,5 @@
 {
-  "name": "stagfoo-typescript-glitch-base",
+  "name": "clambake",
   "version": "1.0.0",
   "description": "an example glitch app with typescript and webpack",
   "main": "src/index.ts",
@@ -12,7 +12,8 @@
   "dependencies": {
     "lit-element": "^2.1.0",
     "lit-html": "^1.1.1",
-    "obake.js": "0.0.1",
+    "obake.js": "^1.0.1",
+    "page": "^1.11.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -22,6 +23,6 @@
     "typescript": "^3.0.3",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.7.2"
   }
 }

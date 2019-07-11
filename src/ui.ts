@@ -1,26 +1,23 @@
 import { LitElement, html, property,   customElement } from 'lit-element';
+import { defaultState } from './store';
 import { state } from './index';
+
+
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
-  state:any;
-  constructor() {
-    super();
-    this.state = state;
-  }
-  static get properties() {
-    return {
-      state: { type: Object },
-    };
-  }
+  @property({
+    hasChanged(value, oldValue){
+      console.log(value, oldValue);
+      return true;
+    }
+  }) state = defaultState;
+
   handleClick(){
-    console.log('Sent')
-    console.log(this.state);
     state.greeting = {
-      name: 'CHANGE_GREETING',
+      name: 'changeGreeting',
       value: 'More Clambake!'
     }
-    console.log(this.state);
   }
   render() {
     return html`<div @click=${this.handleClick} >
