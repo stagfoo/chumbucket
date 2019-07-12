@@ -1,7 +1,7 @@
 
 export const defaultState = {
   greeting: '🌊🦀🔥🌊!',
-  currentPage: { name: 'HOME_PAGE' }
+  currentPage: { name: 'HOME' }
  }
 
 export const reducers = {

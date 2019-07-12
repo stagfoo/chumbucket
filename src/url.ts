@@ -11,12 +11,20 @@ type Context = {
 const HOME_PAGE = (ctx: Context, next: any) => {
   state.currentPage = {
     name: 'updateCurrentPage',
-    value: 'CLAMBAKE'
+    value: 'HOME'
+  }
+};
+const PARTY_PAGE = (ctx: Context, next: any) => {
+  state.currentPage = {
+    name: 'updateCurrentPage',
+    value: 'PARTY'
   }
 };
 
 // Routes
 page('/', HOME_PAGE);
+page('/party', PARTY_PAGE);
+
 
 export function startRouters(): void {
   page.start();
