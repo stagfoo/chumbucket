@@ -6,7 +6,6 @@ import { defaultState } from './store';
 export class AppRoot extends LitElement {
   @property({
     hasChanged(value, oldValue) {
-      console.log(value, oldValue);
       return true;
     }
   }) state = defaultState;
@@ -19,15 +18,26 @@ export class AppRoot extends LitElement {
     return this;
   }
   routing(route) {
-    return html`<h1>${route}</h1>`
+    switch (route) {
+      case 'HOME':
+        return html`
+            <h1>${route}</h1>
+            <h2>${this.state.greeting}</h2>
+            <button @click=${this.handleClick}>Chum the water </button>
+        `
+      default:
+        return html`
+          <h1>${route}</h1>
+          <h2>${this.state.greeting}</h2>
+        `
+        break;
+    }
   }
   render() {
     return html`<div class="container">
   <div class="row">
     <nav-bar></nav-bar>
     ${this.routing(this.state.currentPage.name)}
-    <button @click=${this.handleClick}>(„ಡωಡ„)	Clambake</button>
-     ${this.state.greeting}
   </div>
 </div>`;
   }
@@ -37,7 +47,7 @@ export class AppRoot extends LitElement {
 export class NavBar extends LitElement {
   @property() routes = {
     'Home': '/',
-    'Party': '/party'
+    'Another Page': '/another-page'
   };
 
   static styles = css`

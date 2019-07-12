@@ -1,5 +1,5 @@
 {
-  "name": "clambake",
+  "name": "chum-bucket",
   "version": "1.0.0",
   "description": "an example glitch app with typescript and webpack",
   "main": "src/index.ts",
