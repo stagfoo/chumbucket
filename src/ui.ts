@@ -1,8 +1,6 @@
 import { LitElement, html, property,   customElement } from 'lit-element';
+import { handleGreetingClick } from './actions';
 import { defaultState } from './store';
-import { state } from './index';
-
-
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
@@ -13,11 +11,8 @@ export class AppRoot extends LitElement {
     }
   }) state = defaultState;
 
-  handleClick(){
-    state.greeting = {
-      name: 'changeGreeting',
-      value: 'More Clambake!'
-    }
+  handleClick() {
+    handleGreetingClick()
   }
   render() {
     return html`<div @click=${this.handleClick} >

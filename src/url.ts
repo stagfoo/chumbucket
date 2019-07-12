@@ -1,5 +1,5 @@
 import page from 'page';
-import { state } from 'index';
+import { state } from './index';
 
 type Context = {
   params: {
@@ -21,3 +21,5 @@ page('/', HOME_PAGE);
 export function startRouters(): void {
   page.start();
 }
+
+//Network Call

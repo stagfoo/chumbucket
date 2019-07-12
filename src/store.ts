@@ -1,6 +1,6 @@
 
 export const defaultState = {
-  greeting: 'BoOOOoo!',
+  greeting: '🌊🦀🔥🌊!',
   currentPage: { name: 'HOME_PAGE' }
  }
 

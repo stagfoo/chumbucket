@@ -1,20 +1,22 @@
 import { globalStyles } from './styles';
 import { defaultState, reducers } from './store';
-import { startRouters } from 'input';
+import { startRouters } from './url';
 import { createStore } from 'obake.js';
-import {html, render} from 'lit-html';
+import { html } from 'lit-element';
 import './ui';
 
 //Default render
 document.body.querySelector('style').innerHTML = globalStyles;
-render(html`<app-root></app-root>`, document.body.querySelector('#app'));
-//Render Loop
+document.body.querySelector('#app').innerHTML = html`<app-root></app-root>`.getHTML();
+//Create Store
 export const state = createStore(
     defaultState,
     renderer,
     reducers
   );
+//Render Loop function
 function renderer(newState) {
    (document.querySelector('app-root') as any).state = newState;
 }
+//Start Router listener
 startRouters();
