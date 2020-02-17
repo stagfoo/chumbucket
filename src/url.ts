@@ -9,22 +9,13 @@ type Context = {
 
 // Handlers
 const HOME_PAGE = (ctx: Context, next: any) => {
-  state.currentPage = {
-    name: 'updateCurrentPage',
-    value: 'HOME'
-  }
+  state._update('updateCurrentPage', 'HOME')
 };
 const ANOTHER_PAGE = (ctx: Context, next: any) => {
   getData('chum').then(data => {
-    state.greeting = {
-      name: 'changeGreeting',
-      value: data.greeting
-    }
+    state._update('changeGreeting', data.greeting)
+    state._update('updateCurrentPage', 'ANOTHER')
   })
-  state.currentPage = {
-    name: 'updateCurrentPage',
-    value: 'ANOTHER'
-  }
 };
 
 // Routes
