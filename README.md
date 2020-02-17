@@ -13,7 +13,7 @@ a bucket for holding a form of bait used to attract sharks
 
 # Whats inside
 
-- UI = [Lit Element](https://lit-element.polymer-project.org) or React
+- UI = anything you want. Default is nanohtml (https://github.com/choojs/nanohtml)
 - Store = [Obake.js](https://github.com/stagfoo/obake)
 - Router = [Page.js](https://visionmedia.github.io/page.js/)
 - Styles = Just Javascript and strings, its all you need chum 🍖.
