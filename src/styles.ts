@@ -2,12 +2,8 @@
 export const simpleGrid = `
 /**
 *** SIMPLE GRID
-*** (C) ZACH COLE 2016
+*** (C) ZACH COLE 2016 (stripped)
 **/
-
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
-
-/* UNIVERSAL */
 
 html,
 body {
@@ -18,79 +14,18 @@ body {
   left: 0;
   top: 0;
   font-size: 100%;
+  transition: opacity ease 0.3s;
 }
 
 /* ROOT FONT STYLES */
 
 * {
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Arial', Helvetica, sans-serif;
   color: #333447;
   line-height: 1.5;
 }
 
-/* TYPOGRAPHY */
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.375rem;
-}
-
-h4 {
-  font-size: 1.125rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 0.875rem;
-}
-
-p {
-  font-size: 1.125rem;
-  font-weight: 200;
-  line-height: 1.8;
-}
-
-.font-light {
-  font-weight: 300;
-}
-
-.font-regular {
-  font-weight: 400;
-}
-
-.font-heavy {
-  font-weight: 700;
-}
-
-/* POSITIONING */
-
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.justify {
-  text-align: justify;
-}
 
 /* ==== GRID SYSTEM ==== */
 
@@ -252,35 +187,46 @@ p {
 }
 `
 
+export function button(key) {
+  switch (key) {
+    case 'hover':
+      return `
+        box-shadow: none;
+      `
+    case 'active':
+      return `
+        background-color: yellow;
+      `
+    default:
+      return `
+      font-size: 16px;
+      border-radius: 3px;
+      background-color: lightgrey;
+      border: 1px solid grey;
+      box-shadow: 2px 2px teal;
+      cursor: pointer;
+    `;
+  }
+}
+
 export const globalStyles = `
-${simpleGrid};
-* {
-  box-sizing: border-box;
-}
+${simpleGrid}
 
-body {
-  transition: opacity ease 0.3s;
-}
+button { ${button('default')} }
+button:hover { ${button('hover')} }
+button:active { ${button('active')} }
 
-button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
-  cursor: pointer;
+ul,li {
+  margin: 0;
+  padding:0;
+  display:inline-block;
 }
-
-button:hover {
-  background-color: yellow;
-}
-
-button:active {
-  box-shadow: none;
-}
-
 li {
   margin-bottom: 5px;
+}
+
+a {
+  padding: 1em;
 }
 
 footer {

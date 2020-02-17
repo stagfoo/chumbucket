@@ -1,14 +1,14 @@
 // import { LitElement, html, property, css, customElement } from 'lit-element';
 import { handleGreetingClick } from './actions';
 import html from 'nanohtml';
+import {routes } from './store';
 
 export function AppRoot(state) {
-  console.log(state)
   return html`
   <div id="app">
     <div class="container">
      <div class="row">
-      ${navbar(state)}
+      ${navbar()}
       ${routing(state)}
     </div>
     </div>
@@ -31,27 +31,10 @@ export function routing(state) {
                `
   }
 }
-export function navbar(state) {
-  const routes = {
-    'home': '/',
-    'Another Page': '/another-page',
-  }
-  const css = html`
-    <style>
-      ul,li {
-       margin: 0;
-       padding:0;
-       display:inline-block;
-     }
-     a {
-       padding: 1em;
-     }
-    </style>
-  `
-  //add fairybread
+export function navbar() {
+
   return html`
        <nav>
-         ${css}
          <ul>${Object.keys(routes).map(name => {
           return html`<li><a href="${routes[name]}">${name}</a></li>`
         })}</ul>

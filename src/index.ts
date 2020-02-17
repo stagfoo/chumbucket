@@ -18,13 +18,12 @@ export const state = createStore(
   );
 //Render Loop function
 function renderer(newState) {
-   morphdom(document.body.querySelector('#app'), AppRoot(newState), {
+   morphdom(ROOT_NODE, AppRoot(newState), {
     onBeforeElUpdated: function(fromEl, toEl) {
         // spec - https://dom.spec.whatwg.org/#concept-node-equals
         if (fromEl.isEqualNode(toEl)) {
             return false
         }
-
         return true
     }
   })

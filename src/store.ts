@@ -5,6 +5,11 @@ export const defaultState = {
   currentPage: { name: 'HOME' }
  }
 
+ export const routes = {
+    'Home': '/',
+    'Another Page': '/another-page',
+ }
+
 export const reducers = {
   updateCurrentPage: reducer((state, value) => {
     state.currentPage = { name: value };
