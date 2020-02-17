@@ -1,18 +1,20 @@
+import { reducer } from 'obake.js';
 
 export const defaultState = {
   greeting: '🌊🍖',
   currentPage: { name: 'HOME' }
  }
 
+ export const routes = {
+    'Home': '/',
+    'Another Page': '/another-page',
+ }
+
 export const reducers = {
-  updateCurrentPage: (state, propName, value) => {
-    console.log('[updateCurrentPage]', state, propName, value)
+  updateCurrentPage: reducer((state, value) => {
     state.currentPage = { name: value };
-    return new Promise(function(resolve, reject) { resolve(state) });
-  },
-  changeGreeting: (state, propName, value) => {
-    console.log('[changeGreeting]', state, propName, value)
+  }),
+  changeGreeting: reducer((state, value) => {
     state.greeting = value;
-    return new Promise(function(resolve, reject) { resolve(state) });
-  }
+  }),
 }
