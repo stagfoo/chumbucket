@@ -36,11 +36,6 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".json", ".mjs"],
     mainFields: ['browser', 'main', 'module'],
     modules: ["node_modules", path.resolve(__dirname, 'src'), "types"],
-    alias: {
-        components: path.resolve(__dirname, 'src/components'),
-        domain: path.resolve(__dirname, 'src/domain'),
-        styles: path.resolve(__dirname, 'src/styles'),
-    }
   },
   module: {
     rules: [
