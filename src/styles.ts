@@ -65,7 +65,7 @@ export const REQUIRED_STYLES = new Fairybread().css`
     border-radius: 8px;
   }
 
-  nav a {
+  .nav a {
     padding-bottom: ${DS.gutters.lg}px;
     padding-top: ${DS.gutters.lg}px;
     text-align: center;

@@ -1,4 +1,3 @@
-// import { LitElement, html, property, css, customElement } from 'lit-element';
 import { handleGreetingClick } from './actions';
 import html from 'nanohtml';
 import {routes, navbarIcons } from './store';
@@ -20,25 +19,24 @@ export function routing(state) {
   switch (state.currentPage.name) {
     case "HOME":
       return html`
-                   <h1>Chumbucket</h1>
-                   <h2>${state.greeting}</h2>
-                   <button onclick=${handleGreetingClick}>Chum the water</button>
-               `
+        <h1>Chumbucket</h1>
+        <h2>${state.greeting}</h2>
+        <button onclick=${handleGreetingClick}>Chum the water</button>
+    `
     default:
       return html`
-                 <h1>${state.currentPage.name}</h1>
-                 <h2>${state.greeting}</h2>
-               `
+        <h1>${state.currentPage.name}</h1>
+        <h2>${state.greeting}</h2>
+    `
   }
 }
 export function navbar() {
   return html`
-  <nav>
+  <div class="nav">
   <ul class="row start-xs">${Object.keys(routes).map(name => {
-    console.log(name)
           return html`<li class="col-xs"><a class="box" href="${routes[name]}">${icon(navbarIcons[name])}</a></li>`
         })}</ul>
-        </nav>
+        </div>
       `;
 }
 
