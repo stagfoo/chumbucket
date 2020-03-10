@@ -3,7 +3,7 @@ import Fairybread from 'fairybread';
 export const DS = {
   fontFamily: {
     default: "Sen, san-serif",
-    alt: "Staatliches, san-serif",
+    alt: "'Staatliches', san-serif",
   },
   fontSizes: {
     sm: 8,

@@ -1,0 +1,12 @@
+{
+  "name": "chumbucket",
+  "version": 2,
+  "alias": "chumbucket.now.sh",
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  },
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build", "config": {"distDir": "dist"} }
+  ]
+}

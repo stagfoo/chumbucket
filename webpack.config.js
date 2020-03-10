@@ -1,5 +1,7 @@
 const path = require("path");
-const webpack = require("webpack")
+const webpack = require("webpack");
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 module.exports = {
   entry: "./src/index.ts",
   devtool: "source-map",
@@ -44,7 +46,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new WorkboxPlugin.GenerateSW({
+          clientsClaim: true,
+          skipWaiting: true,
+    }),
   ],
   devServer: {
     hot:true,
