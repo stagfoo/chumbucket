@@ -3,26 +3,26 @@
 
 <head>
   <title>Chumbucket </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
-    type="text/css">
   <link rel="shortcut icon" type="image/png" href="/images/icons/icon-72x72.png" />
   <link rel="shortcut icon" type="image/png" href="/images/icons/icon-72x72.png">
-  <link href="https://fonts.googleapis.com/css?family=Sen|Staatliches&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="manifest" href="/manifest.json">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script defer type="module" src="/main.bundle.js"></script>
-
-</head>
-
-<body>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Staatliches&display=swap" rel="stylesheet">
   <style>
+  
+    h1,h2,h3,h4,h5 {
+      font-family: 'Staatliches', sans-serif;
+      font-display: block;
+    }
     body {
-      opacity: 1;
-      font-family: 'Sen', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #8D58FD;
+      color:  #58D5FD;
+      opacity: 0;
+      font-display: block;
       font-size: 24px;
+    }
+    * {
+     font-family: 'Fira Mono', sans-serif;
     }
 
     .nav ul {
@@ -37,7 +37,22 @@
     a:active {
       color: inherit;
     }
+
+    #app {
+      max-width: 340px;
+      margin: 0 auto;
+    }
   </style>
+  <link rel="manifest" href="/manifest.json">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer type="module" src="/main.bundle.js"></script>
+
+</head>
+
+<body>
+  
   <div id="app"></div>
 </body>
 

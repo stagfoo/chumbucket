@@ -1,16 +1,14 @@
 import { handleGreetingClick } from './actions';
 import html from 'nanohtml';
 import {routes, navbarIcons } from './store';
-import { REQUIRED_STYLES } from './styles'
 
 export function AppRoot(state) {
   return html`
   <div id="app">
-      ${REQUIRED_STYLES}
+      ${navbar()}
       <div class="page">
         ${routing(state)}
       </div>
-      ${navbar()}
     </div>
   `
 }
@@ -20,7 +18,7 @@ export function routing(state) {
     case "HOME":
       return html`
         <h1>Chumbucket</h1>
-        <h2>${state.greeting}</h2>
+        <textarea>(ノ#-◇-)ノ ${state.greeting}</textarea>
         <button onclick=${handleGreetingClick}>Chum the water</button>
     `
     default:
