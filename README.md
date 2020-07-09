@@ -1,4 +1,5 @@
-#  🌊🍖🦈 Chum Bucket
+# 🍖 Chum Bucket 🦈
+
 a bucket for holding a form of bait used to attract sharks
 
 ![jaws chum](https://thumbs.gfycat.com/ForkedAptFurseal-small.gif)
@@ -16,5 +17,4 @@ a bucket for holding a form of bait used to attract sharks
 - UI = anything you want. Default is nanohtml (https://github.com/choojs/nanohtml)
 - Store = [Obake.js](https://github.com/stagfoo/obake)
 - Router = [Page.js](https://visionmedia.github.io/page.js/)
-- Styles = Just Javascript and strings, its all you need chum 🍖.
-
+- Styles = Just Javascript and strings [Joro](https://github.com/stagfoo/joro).

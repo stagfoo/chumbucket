@@ -1,75 +1,108 @@
-import Fairybread from 'fairybread';
+import joro from 'joro';
 
 export const DS = {
   fontFamily: {
-    default: "Sen, san-serif",
+    default: "Fira Mono, san-serif",
     alt: "'Staatliches', san-serif",
   },
   fontSizes: {
     sm: 8,
     md: 16,
     lg: 24,
+    xl: 32,
+
   },
   gutters: {
     sm: 8,
     md: 16,
     lg: 24,
+    xl: 32,
   },
   colors: {
+    purple: "#8D58FD",
     blue: "#58D5FD",
-    green: "#79E35E",
+    green: "#83FD58",
   }
 }
 
-export const REQUIRED_STYLES = new Fairybread().css`
-  html,body {
-    overflow: scroll;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-  }
-  ::-webkit-scrollbar-thumb {
-    background: transparent;
-  }
+export const STYLES = new joro();
 
-  body {
-    transition: 0.3s ease all;
-  }
-  #app {
-    margin: 0 auto;
-    overflow:hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 960px;
-  }
-  .page {
-    height: 90vh;
-    padding-top: ${DS.gutters.md}px;
-    padding-left: ${DS.gutters.md}px;
-    padding-right: ${DS.gutters.md}px;
-    overflow-y: scroll;
-  }
-  button {
-    border: 0;
-    padding: ${DS.gutters.sm}px;
-    font-size: 1em;
-    font-family: ${DS.fontFamily.alt};
-    background: ${DS.colors.blue};
-    border-radius: 8px;
-  }
 
-  .nav a {
-    padding-bottom: ${DS.gutters.lg}px;
-    padding-top: ${DS.gutters.lg}px;
-    text-align: center;
-    display:block;
+function buttonStyle(){
+  return `
+  background: ${DS.colors.blue};
+  color:  ${DS.colors.purple};
+  box-sizing: border-box;
+  font-size: ${DS.fontSizes.lg}px;
+  padding: ${DS.gutters.md}px;
+  border: 0;
+  text-decoration: none;
+  `
+}
+export function notificationStyle(){
+  STYLES.add("notificationStyle", `
+  .notification {
+    background: #fff;
+    box-shadow: 10px 10px 0px #000;
+    position:fixed;
+    font-size: ${DS.fontSizes.md}px;
+    padding: ${DS.gutters.md}px;
+    width: 320px;
+    text-align:center;
+    transition: ease all 0.3s;
+    animation-name: notification;
+    animation-duration: 0.3s;
+    }
+  .notification.hide {
+    animation-name: notification-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
   }
+  `)
+}
 
-`
+export function BaseStyles() {
+  STYLES.add("baseStyles", `
+    html,body {
+      margin: 0;
+      padding: 0;
+      background: ${DS.colors.purple};
+      color:  ${DS.colors.blue};
+      opacity: 1;
+    }
+    textarea,
+    button {
+      display: block;
+      clear:both;
+      margin: ${DS.gutters.sm}px auto ${DS.gutters.sm}px auto;
+      ${buttonStyle()}
+    }
+    textarea {
+      width: 100%;
+      min-height: 300px;
+      font-size: ${DS.fontSizes.xl}px;
+    }
+    .nav {
+      margin-top: ${DS.gutters.xl}px;
+    }
+    .nav li {
+      display:inline-block;
+    }
+    .nav li.active a {
+      background: ${DS.colors.green};
+      color:  ${DS.colors.purple};
+    }
+    .nav li a {
+      ${buttonStyle()}
+      margin-right: ${DS.gutters.sm}px;
+    }
+    @keyframes notification {
+      from {bottom: -20vh;}
+      to {bottom: 5vh;}
+    }
+    @keyframes notification-out {
+      to {bottom: -20vh; display:none;}
+      from {bottom: 5vh; display:block;}
+    }
+  `)
+}

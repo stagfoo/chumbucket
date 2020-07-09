@@ -1,7 +1,7 @@
 {
   "name": "chumbucket",
   "version": 2,
-  "alias": "chumbucket.now.sh",
+  "alias": "chumbucket.stagfoo.com",
   "github": {
     "enabled": true,
     "autoAlias": true

@@ -1,16 +1,16 @@
 import { handleGreetingClick } from './actions';
 import html from 'nanohtml';
-import {routes, navbarIcons } from './store';
-import { REQUIRED_STYLES } from './styles'
+import {routes } from './store';
+import { notificationStyle } from 'styles';
 
 export function AppRoot(state) {
   return html`
   <div id="app">
-      ${REQUIRED_STYLES}
+      ${navbar(state)}
       <div class="page">
         ${routing(state)}
       </div>
-      ${navbar()}
+      ${notification(state)}
     </div>
   `
 }
@@ -20,28 +20,41 @@ export function routing(state) {
     case "HOME":
       return html`
         <h1>Chumbucket</h1>
-        <h2>${state.greeting}</h2>
+        <textarea>(ノ-◇-)ノ ${state.greeting}</textarea>
         <button onclick=${handleGreetingClick}>Chum the water</button>
     `
-    default:
+    case "EXAMPLE_FETCH":
       return html`
-        <h1>${state.currentPage.name}</h1>
-        <h2>${state.greeting}</h2>
+      <h1>Fetching no?</h1>
+        <textarea>（*＾3＾）/～      ${state.greeting}</textarea>
+        <button onclick=${handleGreetingClick}>Feed the Sharks</button>
     `
+    default:
+    return html`
+       <h1>404 CHUM</h1>
+  `
   }
 }
-export function navbar() {
+export function navbar(state) {
   return html`
   <div class="nav">
   <ul class="row start-xs">${Object.keys(routes).map(name => {
-          return html`<li class="col-xs"><a class="box" href="${routes[name]}">${icon(navbarIcons[name])}</a></li>`
+          const isActive = state.currentPage.activePage === routes[name];
+          const activeText = isActive ? "#"+name : name
+          return html`
+          <li class="${isActive? "active": ""}">
+            <a class="box" href="${routes[name]}">${activeText}</a>
+          </li>`
         })}</ul>
         </div>
       `;
 }
 
-export function icon(type){
+function notification(state){
+  notificationStyle()
   return html`
-    <i class="large material-icons">${type}</i>
+    <div class="notification ${state.notification.show? "show": "hide"}">
+      ${state.notification.text}
+    </div>
   `
 }

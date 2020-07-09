@@ -2,6 +2,7 @@ import { defaultState, reducers } from './store';
 import { startRouters } from './url';
 import { createStore } from 'obake.js';
 import { AppRoot } from './ui';
+import { BaseStyles  } from './styles';
 import morphdom from 'morphdom';
 
 //Default render
@@ -25,7 +26,9 @@ function renderer(newState) {
   })
 }
 //Start Router listener
+//too fast for fonts
 startRouters();
+BaseStyles();
 
  if ('serviceWorker' in navigator) {
      window.addEventListener('load', () => {
