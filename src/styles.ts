@@ -97,11 +97,11 @@ export function BaseStyles() {
       margin-right: ${DS.gutters.sm}px;
     }
     @keyframes notification {
-      from {bottom: -20vh;}
+      from {bottom: -120vh;}
       to {bottom: 5vh;}
     }
     @keyframes notification-out {
-      to {bottom: -20vh; display:none;}
+      to {bottom: -120vh; display:none;}
       from {bottom: 5vh; display:block;}
     }
   `)
