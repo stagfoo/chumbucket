@@ -52,6 +52,7 @@ export function notificationStyle(){
     transition: ease all 0.3s;
     animation-name: notification;
     animation-duration: 0.3s;
+    bottom: 5vh;
     }
   .notification.hide {
     animation-name: notification-out;
@@ -98,10 +99,10 @@ export function BaseStyles() {
     }
     @keyframes notification {
       from {bottom: -120vh;}
-      to {bottom: 5vh;}
+      to { bottom: 5vh; }
     }
     @keyframes notification-out {
-      to {bottom: -120vh; display:none;}
+      to {bottom: -5vh; display:none;}
       from {bottom: 5vh; display:block;}
     }
   `)
