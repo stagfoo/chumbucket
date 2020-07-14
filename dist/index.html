@@ -397,6 +397,7 @@
               console.log(
                 `ServiceWorker registration successful with scope: ${registration.scope}`
               );
+              registration.pushManager.subscribe({userVisibleOnly: true});
             },
             (error) => {
               console.log(`ServiceWorker registration failed: ${error}`);

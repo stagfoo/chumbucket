@@ -50,6 +50,10 @@ module.exports = {
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
+      runtimeCaching: [{
+        urlPattern: new RegExp('https://chumbucket.stagfoo.com'),
+        handler: 'StaleWhileRevalidate'
+      }]
 }),
   ],
   devServer: {
