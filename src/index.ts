@@ -1,5 +1,6 @@
-import { defaultState, reducers } from './store';
+import { reducers } from './store';
 import { startRouters } from './url';
+import { hydrateState, dehydrateState} from 'utils'
 import { createStore } from 'obake.js';
 import { AppRoot } from './ui';
 import { BaseStyles  } from './styles';
@@ -9,9 +10,13 @@ import morphdom from 'morphdom';
 const ROOT_NODE = document.body.querySelector('#app');
 
 //Create Store
+const defaultState = hydrateState()
 export const state = createStore(
     defaultState,
-    { renderer: renderer },
+    {
+      renderer,
+      dehydrateState
+    },
     reducers
   );
 //Render Loop function
