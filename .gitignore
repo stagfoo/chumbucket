@@ -4,3 +4,4 @@ dist/*.js
 !dist/service-worker.js
 dist/*.js.map
 chumbucket/*
+!chumbucket/readme.md
