@@ -46,11 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new WorkboxPlugin.GenerateSW({
-          clientsClaim: true,
-          skipWaiting: true,
-    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     hot:true,
