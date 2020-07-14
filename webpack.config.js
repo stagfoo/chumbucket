@@ -48,7 +48,17 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new WorkboxPlugin.GenerateSW({
+      cacheId: `${new Date().getTime()}`,
+      cleanupOutdatedCaches: true,
+      inlineWorkboxRuntime: true,
+      navigateFallback: "index.html",
+      include:[
+        "main.bundle.js",
+        "index.html",
+        "data.json",
+      ],
       clientsClaim: true,
+      runtimeCaching: true,
       skipWaiting: true,
       runtimeCaching: [{
         urlPattern: new RegExp('https://chumbucket.stagfoo.com'),
