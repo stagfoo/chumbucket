@@ -14,7 +14,6 @@ const HOME_PAGE = (ctx: Context, next: any) => {
     show: false
   })
   state._update('updateCurrentPage', 'HOME')
-  state._update('changeGreeting', '🍖🍖🍖🍖')
 
 };
 const EXAMPLE_FETCH = (ctx: Context, next: any) => {
