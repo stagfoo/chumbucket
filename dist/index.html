@@ -389,24 +389,5 @@
 
   <body>
     <div id="app"></div>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./service-worker.js", {
-            scope: "."
-          }).then(
-            (registration) => {
-              console.log(
-                `ServiceWorker registration successful with scope: ${registration.scope}`
-              );
-              registration.pushManager.subscribe({userVisibleOnly: true});
-            },
-            (error) => {
-              console.log(`ServiceWorker registration failed: ${error}`);
-            }
-          );
-        });
-      }
-    </script>
   </body>
 </html>
