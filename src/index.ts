@@ -4,7 +4,7 @@ import { hydrateState, dehydrateState} from 'utils'
 import { createStore } from 'obake.js';
 import { AppRoot } from './ui';
 import { BaseStyles  } from './styles';
-import morphdom from 'morphdom';
+import morph from 'nanomorph';
 
 //Default render
 const ROOT_NODE = document.body.querySelector('#app');
@@ -19,10 +19,13 @@ export const state = createStore(
     },
     reducers
   );
+
 //Render Loop function
 function renderer(newState) {
-   morphdom(ROOT_NODE, AppRoot(newState), {
+  morph(ROOT_NODE, AppRoot(newState), {
     onBeforeElUpdated: function(fromEl, toEl) {
+        // spec - https://dom.spec.whatwg.org/#concept-node-equals
+
         if (fromEl.isEqualNode(toEl)) {
             return false
         }
@@ -31,7 +34,6 @@ function renderer(newState) {
   })
 }
 //Start Router listener
-//too fast for fonts
 startRouters();
 BaseStyles();
 
