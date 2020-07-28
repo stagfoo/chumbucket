@@ -18,7 +18,7 @@ const HOME_PAGE = (ctx: Context, next: any) => {
 };
 const EXAMPLE_FETCH = (ctx: Context, next: any) => {
   getData('chum').then(data => {
-    state._update('changeGreeting', data.greeting)
+    state._update('updateGreeting', data.greeting)
     state._update('updateCurrentPage', 'EXAMPLE_FETCH')
     state._update('updateNotification', {
       text: "Shark data loaded  (´ε｀ )♡",
