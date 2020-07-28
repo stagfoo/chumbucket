@@ -15,6 +15,7 @@
     "joro": "^1.0.4",
     "morphdom": "^2.5.12",
     "nanohtml": "^1.9.0",
+    "nanomorph": "^5.4.2",
     "obake.js": "^1.0.1",
     "page": "^1.11.4"
   },

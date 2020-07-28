@@ -22,7 +22,7 @@ export const reducers = {
   updateCurrentPage: reducer((state, value: string) => {
     state.currentPage = { name: value, activePage:activePage[value]  };
   }),
-  changeGreeting: reducer((state, value: string) => {
+  updateGreeting: reducer((state, value: string) => {
     state.greeting = value;
   }),
   updateNotification: reducer((state, value:{text: string, show: boolean}) => {

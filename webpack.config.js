@@ -51,10 +51,8 @@ module.exports = {
       cacheId: `${new Date().getTime()}`,
       cleanupOutdatedCaches: true,
       inlineWorkboxRuntime: true,
-      navigateFallback: "index.html",
       include:[
         "main.bundle.js",
-        "index.html",
         "data.json",
       ],
       clientsClaim: true,
