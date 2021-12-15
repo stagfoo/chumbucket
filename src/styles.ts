@@ -22,6 +22,7 @@ export const DS = {
     purple: "#8D58FD",
     blue: "#58D5FD",
     green: "#83FD58",
+    yellow: "#FDD758"
   }
 }
 
@@ -30,7 +31,7 @@ export const STYLES = new joro();
 
 function buttonStyle(){
   return `
-  background: ${DS.colors.blue};
+  background: ${DS.colors.yellow};
   color:  ${DS.colors.purple};
   box-sizing: border-box;
   font-size: ${DS.fontSizes.lg}px;
@@ -43,8 +44,11 @@ export function notificationStyle(){
   STYLES.add("notificationStyle", `
   .notification {
     background: #fff;
-    box-shadow: 10px 10px 0px #000;
+    box-shadow: ${DS.gutters.sm}px ${DS.gutters.sm}px 0px #000;
     position:fixed;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
     font-size: ${DS.fontSizes.md}px;
     padding: ${DS.gutters.md}px;
     width: 320px;
@@ -52,12 +56,14 @@ export function notificationStyle(){
     transition: ease all 0.3s;
     animation-name: notification;
     animation-duration: 0.3s;
-    bottom: 5vh;
+    bottom: ${DS.gutters.lg}px;
     }
   .notification.hide {
     animation-name: notification-out;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    bottom: -10vh;
+    height: 0px;
   }
   `)
 }
@@ -75,12 +81,14 @@ export function BaseStyles() {
     button {
       display: block;
       clear:both;
+      width: 100%;
       margin: ${DS.gutters.sm}px auto ${DS.gutters.sm}px auto;
       ${buttonStyle()}
     }
     textarea {
       width: 100%;
       min-height: 300px;
+      background: ${DS.colors.blue};
       font-size: ${DS.fontSizes.xl}px;
     }
     .nav {
