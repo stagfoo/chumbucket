@@ -1,7 +1,7 @@
 import { reducer } from 'obake.js';
 
 export const defaultState = {
-  greeting: '🍖🍖🍖🍖',
+  bucket: '',
   currentPage: { name: 'HOME', activePage: "/" },
   notification: {
     text: "",
@@ -22,8 +22,8 @@ export const reducers = {
   updateCurrentPage: reducer((state, value: string) => {
     state.currentPage = { name: value, activePage:activePage[value]  };
   }),
-  updateGreeting: reducer((state, value: string) => {
-    state.greeting = value;
+  updateBucket: reducer((state, value: string) => {
+    state.bucket = value;
   }),
   updateNotification: reducer((state, value:{text: string, show: boolean}) => {
     state.notification = value;
