@@ -1,35 +1,17 @@
 import page from 'page';
 import { state } from './index';
-
-type Context = {
-  params: {
-    name?: string;
-  };
-};
+import { hideNotifications, showNotifications } from './actions';
 
 // Handlers
-const HOME_PAGE = (ctx: Context, next: any) => {
-  state._update('updateNotification', {
-    text: "",
-    show: false
-  })
+const HOME_PAGE = (ctx, next) => {
   state._update('updateCurrentPage', 'HOME')
-
 };
-const EXAMPLE_FETCH = (ctx: Context, next: any) => {
-  getData('chum').then(data => {
-    state._update('updateGreeting', data.greeting)
+const EXAMPLE_FETCH = (ctx, next) => {
+  getData(window.location.origin + "/data.json").then(data => {
+    state._update('updateBucket', data.greeting)
     state._update('updateCurrentPage', 'EXAMPLE_FETCH')
-    state._update('updateNotification', {
-      text: "Shark data loaded  (´ε｀ )♡",
-      show: true
-    })
-    setTimeout(()=> {
-      state._update('updateNotification', {
-        text: "",
-        show: false
-      })
-    }, 1000)
+    showNotifications("Shark data loaded  (´ε｀ )♡")
+    hideNotifications(1000)
   })
 };
 
@@ -43,11 +25,8 @@ export function startRouters(): void {
 }
 
 //Network Call
-const API = {
-  JSON: window.location.origin
-}
-export async function getData(name: string) {
-  const resp = await fetch(`${API.JSON}/data.json`);
+export async function getData(url: string) {
+  const resp = await fetch(url);
   if (resp.ok) {
     return resp.json();
   } else throw new TypeError('getData response is not Ok');
