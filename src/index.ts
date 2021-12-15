@@ -1,6 +1,5 @@
-import { reducers } from './store';
+import { reducers, defaultState } from './store';
 import { startRouters } from './url';
-import { hydrateState, dehydrateState} from 'utils'
 import { createStore } from 'obake.js';
 import { AppRoot } from './ui';
 import { BaseStyles  } from './styles';
@@ -10,27 +9,17 @@ import morph from 'nanomorph';
 const ROOT_NODE = document.body.querySelector('#app');
 
 //Create Store
-const defaultState = hydrateState()
 export const state = createStore(
     defaultState,
-    {
-      renderer,
-      dehydrateState
-    },
+    { renderer },
     reducers
   );
 
 //Render Loop function
+// spec - https://dom.spec.whatwg.org/#concept-node-equals
 function renderer(newState) {
   morph(ROOT_NODE, AppRoot(newState), {
-    onBeforeElUpdated: function(fromEl, toEl) {
-        // spec - https://dom.spec.whatwg.org/#concept-node-equals
-
-        if (fromEl.isEqualNode(toEl)) {
-            return false
-        }
-        return true
-    }
+    onBeforeElUpdated: (f, i) => !f.isEqualNode(i)
   })
 }
 //Start Router listener
