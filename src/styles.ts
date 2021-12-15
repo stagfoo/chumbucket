@@ -54,17 +54,14 @@ export function notificationStyle(){
     width: 320px;
     text-align:center;
     transition: ease all 0.3s;
-    animation-name: notification;
-    animation-duration: 0.3s;
-    bottom: ${DS.gutters.lg}px;
-    }
-  .notification.hide {
-    animation-name: notification-out;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
     bottom: -10vh;
     height: 0px;
-  }
+    }
+    .notification.show {
+      transition: ease all 0.3s;
+      bottom: ${DS.gutters.lg}px;
+      height: auto;
+    }
   `)
 }
 
