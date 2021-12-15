@@ -1,6 +1,6 @@
 {
   "name": "chum-bucket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "an example glitch app with typescript and webpack",
   "main": "src/index.ts",
   "scripts": {
@@ -15,8 +15,8 @@
     "joro": "^1.0.4",
     "morphdom": "^2.5.12",
     "nanohtml": "^1.9.0",
-    "nanomorph": "^5.4.2",
-    "obake.js": "^1.0.1",
+    "nanomorph": "^5.4.3",
+    "obake.js": "^1.2.1",
     "page": "^1.11.4"
   },
   "devDependencies": {
