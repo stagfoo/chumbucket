@@ -1,36 +1,35 @@
 import joro from 'joro';
 
 export const DS = {
-  fontFamily: {
-    default: "Fira Mono, san-serif",
-    alt: "'Staatliches', san-serif",
-  },
-  fontSizes: {
-    sm: 8,
-    md: 16,
-    lg: 24,
-    xl: 32,
+	fontFamily: {
+		default: 'Fira Mono, san-serif',
+		alt: '\'Staatliches\', san-serif',
+	},
+	fontSizes: {
+		sm: 8,
+		md: 16,
+		lg: 24,
+		xl: 32,
 
-  },
-  gutters: {
-    sm: 8,
-    md: 16,
-    lg: 24,
-    xl: 32,
-  },
-  colors: {
-    purple: "#8D58FD",
-    blue: "#58D5FD",
-    green: "#83FD58",
-    yellow: "#FDD758"
-  }
-}
+	},
+	gutters: {
+		sm: 8,
+		md: 16,
+		lg: 24,
+		xl: 32,
+	},
+	colors: {
+		purple: '#8D58FD',
+		blue: '#58D5FD',
+		green: '#83FD58',
+		yellow: '#FDD758',
+	},
+};
 
 export const STYLES = new joro();
 
-
-function buttonStyle(){
-  return `
+function buttonStyle() {
+	return `
   background: ${DS.colors.yellow};
   color:  ${DS.colors.purple};
   box-sizing: border-box;
@@ -38,10 +37,11 @@ function buttonStyle(){
   padding: ${DS.gutters.md}px;
   border: 0;
   text-decoration: none;
-  `
+  `;
 }
-export function notificationStyle(){
-  STYLES.add("notificationStyle", `
+
+export function notificationStyle() {
+	STYLES.add('notificationStyle', `
   .notification {
     background: #fff;
     box-shadow: ${DS.gutters.sm}px ${DS.gutters.sm}px 0px #000;
@@ -62,11 +62,11 @@ export function notificationStyle(){
       bottom: ${DS.gutters.lg}px;
       height: auto;
     }
-  `)
+  `);
 }
 
 export function BaseStyles() {
-  STYLES.add("baseStyles", `
+	STYLES.add('baseStyles', `
     html,body {
       margin: 0;
       padding: 0;
@@ -110,5 +110,5 @@ export function BaseStyles() {
       to {bottom: -5vh; display:none;}
       from {bottom: 5vh; display:block;}
     }
-  `)
+  `);
 }
