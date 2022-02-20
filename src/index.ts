@@ -1,15 +1,16 @@
-import { reducers, defaultState } from './store';
+import { reducers, defaultState, State } from './store';
 import { startRouters } from './url';
 import { createStore } from 'obake.js';
 import { AppRoot } from './ui';
 import { BaseStyles  } from './styles';
 import morph from 'nanomorph';
 
+
 //Default render
 const ROOT_NODE = document.body.querySelector('#app');
 
 //Create Store
-export const state = createStore(
+export const state:State = createStore(
     defaultState,
     { renderer },
     reducers
@@ -17,9 +18,9 @@ export const state = createStore(
 
 //Render Loop function
 // spec - https://dom.spec.whatwg.org/#concept-node-equals
-function renderer(newState) {
+function renderer(newState: State) {
   morph(ROOT_NODE, AppRoot(newState), {
-    onBeforeElUpdated: (f, i) => !f.isEqualNode(i)
+    onBeforeElUpdated: (fromEl: HTMLElement, toEl: HTMLElement) => !fromEl.isEqualNode(toEl)
   })
 }
 //Start Router listener

@@ -10,7 +10,9 @@
       "module": "esnext",
       "declaration": false,
       "experimentalDecorators": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "strict": true
     },
     "exclude": [
       "node_modules"
