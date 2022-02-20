@@ -12,6 +12,10 @@
   },
   "author": "stagfoo",
   "license": "ISC",
+  "pre-commit": [
+    "lint:fix",
+    "spellcheck"
+  ],
   "dependencies": {
     "joro": "^1.0.4",
     "morphdom": "^2.6.1",
