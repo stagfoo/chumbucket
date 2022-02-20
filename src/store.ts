@@ -10,7 +10,7 @@ export type State = {
   bucket: string,
   currentPage: Route,
   notification: Notification,
-  _update:(reducerName: string, data: unknown) => Promise<State>
+  _update:(_reducerName: string, _data: unknown) => Promise<State>
 }
 
 export const defaultState: Omit<State, '_update'> = {
