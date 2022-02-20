@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --content-base dist --hot --inline --mode=development",
     "build": "webpack -p",
+    "lint": "eslint \"src/**/*.{tsx,ts}\"",
+    "lint:fix": "eslint \"src/**/*.{tsx,ts}\" --fix",
     "spellcheck": "git diff --name-only | cspell --file-list stdin"
   },
   "author": "stagfoo",
@@ -19,8 +21,12 @@
     "page": "^1.11.4"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
     "awesome-typescript-loader": "^5.2.1",
     "cspell": "^5.18.5",
+    "eslint": "^8.9.0",
+    "eslint-config-xo": "^0.40.0",
     "pre-commit": "^1.2.2",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.9.10",
