@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.ts",
@@ -46,23 +45,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      cacheId: `${new Date().getTime()}`,
-      cleanupOutdatedCaches: true,
-      inlineWorkboxRuntime: true,
-      include:[
-        "main.bundle.js",
-        "data.json",
-      ],
-      clientsClaim: true,
-      runtimeCaching: true,
-      skipWaiting: true,
-      runtimeCaching: [{
-        urlPattern: new RegExp('https://chumbucket.stagfoo.com'),
-        handler: 'StaleWhileRevalidate'
-      }]
-}),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     hot:true,

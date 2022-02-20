@@ -1,33 +1,35 @@
 import page from 'page';
-import { state } from './index';
-import { hideNotifications, showNotifications } from './actions';
+import {state} from './index';
+import {hideNotifications, showNotifications} from './actions';
 
 // Handlers
 const HOME_PAGE = () => {
-  state._update('updateCurrentPage', 'HOME')
+	state._update('updateCurrentPage', 'HOME');
 };
+
 const EXAMPLE_FETCH = () => {
-  getData(window.location.origin + "/data.json").then(data => {
-    state._update('updateBucket', data.greeting)
-    state._update('updateCurrentPage', 'EXAMPLE_FETCH')
-    showNotifications("Shark data loaded  (´ε｀ )♡")
-    hideNotifications(1000)
-  })
+	getData(window.location.origin + '/data.json').then(data => {
+		state._update('updateBucket', data.greeting);
+		state._update('updateCurrentPage', 'EXAMPLE_FETCH');
+		showNotifications('Shark data loaded  (´ε｀ )♡');
+		hideNotifications(1000);
+	});
 };
 
 // Routes
 page('/', HOME_PAGE);
 page('/example-fetch', EXAMPLE_FETCH);
 
-
 export function startRouters(): void {
-  page.start();
+	page.start();
 }
 
-//Network Call
+// Network Call
 export async function getData(url: string) {
-  const resp = await fetch(url);
-  if (resp.ok) {
-    return resp.json();
-  } else throw new TypeError('getData response is not Ok');
+	const resp = await fetch(url);
+	if (resp.ok) {
+		return resp.json();
+	}
+
+	throw new TypeError('getData response is not Ok');
 }
