@@ -3,7 +3,7 @@ import html from 'nanohtml';
 import {ROUTES, Route, State} from './store';
 import {notificationStyle} from 'styles';
 
-export function AppRoot(state: State): HTMLElement {
+export function ui(state: State): HTMLElement {
 	return html`
     <div id="app">
       ${navbar(state)}

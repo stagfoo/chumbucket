@@ -1,8 +1,8 @@
 import {reducers, defaultState, State} from './store';
 import {startRouters} from './url';
 import {createStore} from 'obake.js';
-import {AppRoot} from './ui';
-import {BaseStyles} from './styles';
+import {ui} from './ui';
+import {baseStyles} from './styles';
 import morph from 'nanomorph';
 
 // Default render
@@ -18,14 +18,14 @@ export const state:State = createStore(
 // Render Loop function
 // spec - https://dom.spec.whatwg.org/#concept-node-equals
 function renderer(newState: State) {
-	morph(ROOT_NODE, AppRoot(newState), {
+	morph(ROOT_NODE, ui(newState), {
 		onBeforeElUpdated: (fromEl: HTMLElement, toEl: HTMLElement) => !fromEl.isEqualNode(toEl),
 	});
 }
 
 // Start Router listener
 startRouters();
-BaseStyles();
+baseStyles();
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {

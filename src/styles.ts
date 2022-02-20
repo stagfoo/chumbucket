@@ -1,4 +1,4 @@
-import joro from 'joro';
+import Joro from 'joro';
 
 export const DS = {
 	fontFamily: {
@@ -26,7 +26,7 @@ export const DS = {
 	},
 };
 
-export const STYLES = new joro();
+export const STYLES = new Joro();
 
 function buttonStyle() {
 	return `
@@ -65,7 +65,7 @@ export function notificationStyle() {
   `);
 }
 
-export function BaseStyles() {
+export function baseStyles() {
 	STYLES.add('baseStyles', `
     html,body {
       margin: 0;
