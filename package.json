@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "webpack-dev-server --content-base dist --hot --inline --mode=development",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "spellcheck": "git diff --name-only | cspell --file-list stdin"
   },
   "author": "stagfoo",
   "license": "ISC",
@@ -19,6 +20,8 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "cspell": "^5.18.5",
+    "pre-commit": "^1.2.2",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.9.10",
     "webpack": "^4.43.0",
