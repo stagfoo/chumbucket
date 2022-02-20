@@ -9,7 +9,9 @@
         "nanohtml",
         "obake",
         "joro",
-        "workbox"
+        "workbox",
+        "Fira",
+        "Staatliches"
     ],
     "ignorePaths": ["**/node_modules/**"]
 }
