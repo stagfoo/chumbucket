@@ -3,10 +3,10 @@ import { state } from './index';
 import { hideNotifications, showNotifications } from './actions';
 
 // Handlers
-const HOME_PAGE = (ctx, next) => {
+const HOME_PAGE = () => {
   state._update('updateCurrentPage', 'HOME')
 };
-const EXAMPLE_FETCH = (ctx, next) => {
+const EXAMPLE_FETCH = () => {
   getData(window.location.origin + "/data.json").then(data => {
     state._update('updateBucket', data.greeting)
     state._update('updateCurrentPage', 'EXAMPLE_FETCH')
