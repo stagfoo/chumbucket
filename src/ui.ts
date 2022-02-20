@@ -36,7 +36,7 @@ export function navbar(state: State): HTMLElement {
     <div class="nav">
       <ul class="row start-xs">
         ${(Object.keys(ROUTES) as Route[]).map((name) => {
-          const isActive = state.currentPage === ROUTES[name];
+          const isActive = state.currentPage === name;
           return html` <li class="${isActive ? "active" : ""}">
             <a class="box" href="${ROUTES[name]}">${isActive ? "#" + name : name}</a>
           </li>`;
