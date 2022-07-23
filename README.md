@@ -12,7 +12,7 @@
 
 # Why did we develop this?
 
-- To build quick demo applications and test cases.
+- To build quick demo applications and test ideas.
 - Its got one global state focusing on (data = view)
 - Routing is super transparent
 - Who needs folders in such small apps
