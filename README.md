@@ -1,6 +1,6 @@
 <p align="center"><img width="300px" src=".readme/logo.png" />
 </p>
-<p align="center">A kit to build quick demo applications and test cases (chumming the water so to speak )</p>
+<p align="center">A kit to build quick demo applications and test ideas (chumming the water so to speak)</p>
 <hr>
 <p align="center">
 <a href="https://opensource.org/licenses/MIT">
