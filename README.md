@@ -1,6 +1,6 @@
 <p align="center"><img width="300px" src=".readme/logo.png" />
 </p>
-<p align="center">a kit to build quick demo apps and test ideas (chumming the water so to speak )</p>
+<p align="center">A kit to build quick demo applications and test ideas (chumming the water so to speak)</p>
 <hr>
 <p align="center">
 <a href="https://opensource.org/licenses/MIT">
@@ -10,13 +10,13 @@
 
 ---
 
-# Why make this?
+# Why did we develop this?
 
-- a kit to build quick demo apps and test ideas (chumming the water so to speak )
+- To build quick demo applications and test ideas.
 - Its got one global state focusing on (data = view)
-- routing is super transparent
-- who needs folders in such small apps
-- simple entry point if you want to change the UI
+- Routing is super transparent
+- Who needs folders in such small apps
+- Simple entry point if you want to change the UI
 - Good for glitch projects
 
 # Whats inside
@@ -27,8 +27,8 @@
 - 🍹 Styles = Just Javascript and strings [Joro](https://github.com/stagfoo/joro).
 
 
-# whats a chumbucket
+# What is a chumbucket?
 
-a bucket for holding a form of bait used to attract sharks
+A bucket for holding a form of bait used to attract sharks
 
 ![jaws chum](https://thumbs.gfycat.com/ForkedAptFurseal-small.gif)
