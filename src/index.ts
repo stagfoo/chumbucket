@@ -2,7 +2,7 @@ import {reducers, defaultState, State} from './store';
 import {startRouters} from './url';
 import {createStore} from 'obake.js';
 import {ui} from './ui';
-import {baseStyles} from './styles';
+import {STYLES, baseStyles, DS} from './styles';
 import morph from 'nanomorph';
 
 // Default render
@@ -25,4 +25,4 @@ function renderer(newState: State) {
 
 // Start Router listener
 startRouters();
-baseStyles();
+STYLES.add('styles', baseStyles(DS), window.document.createElement('style'), true);

@@ -1,5 +1,6 @@
 import Joro from 'joro';
 
+type DesignSystem = { fontFamily?: { default: string; alt: string; }; fontSizes: any; gutters: any; colors: any; };
 export const DS = {
 	fontFamily: {
 		default: 'Fira Mono, san-serif',
@@ -65,8 +66,8 @@ export function notificationStyle() {
   `);
 }
 
-export function baseStyles() {
-	STYLES.add('baseStyles', `
+export function baseStyles(DS:DesignSystem) {
+	return `
     html,body {
       margin: 0;
       padding: 0;
@@ -110,5 +111,5 @@ export function baseStyles() {
       to {bottom: -5vh; display:none;}
       from {bottom: 5vh; display:block;}
     }
-  `);
+  `;
 }
