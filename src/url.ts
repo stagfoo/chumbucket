@@ -1,6 +1,6 @@
 import page from 'page';
-import {state} from './index';
-import {hideNotifications, showNotifications} from './actions';
+import { state } from './index';
+import { hideNotifications, showNotifications } from './actions';
 
 // Handlers
 const HOME_PAGE = () => {
@@ -8,7 +8,7 @@ const HOME_PAGE = () => {
 };
 
 const EXAMPLE_FETCH = () => {
-	getData(window.location.origin + '/data.json').then(data => {
+	getData('https://raw.githubusercontent.com/stagfoo/chumbucket/master/dist/data.json').then(data => {
 		state._update('updateBucket', data.greeting);
 		state._update('updateCurrentPage', 'EXAMPLE_FETCH');
 		showNotifications('Shark data loaded  (´ε｀ )♡');
@@ -22,6 +22,7 @@ page('/example-fetch', EXAMPLE_FETCH);
 
 export function startRouters(): void {
 	page.start();
+	HOME_PAGE();
 }
 
 // Network Call
