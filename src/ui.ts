@@ -1,7 +1,7 @@
 import {handleButtonClick} from './actions';
 import html from 'nanohtml';
 import {ROUTES, Route, State} from './store';
-import {notificationStyle} from 'styles';
+import {STYLES, notificationStyle, DS} from './styles';
 
 export function ui(state: State): HTMLElement {
 	return html`
@@ -48,7 +48,7 @@ export function navbar(state: State): HTMLElement {
 }
 
 function notification(state: State): HTMLElement {
-	notificationStyle();
+  STYLES.add('notificationStyle', notificationStyle(DS), window.document.createElement('style'), true);
 	return html`
     <div class="notification ${state.notification.show ? 'show' : 'hide'}">
       ${state.notification.text}

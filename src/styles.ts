@@ -41,8 +41,8 @@ function buttonStyle() {
   `;
 }
 
-export function notificationStyle() {
-	STYLES.add('notificationStyle', `
+export function notificationStyle(DS:DesignSystem) {
+  return `
   .notification {
     background: #fff;
     box-shadow: ${DS.gutters.sm}px ${DS.gutters.sm}px 0px #000;
@@ -63,7 +63,7 @@ export function notificationStyle() {
       bottom: ${DS.gutters.lg}px;
       height: auto;
     }
-  `);
+  `;
 }
 
 export function baseStyles(DS:DesignSystem) {
@@ -74,6 +74,9 @@ export function baseStyles(DS:DesignSystem) {
       background: ${DS.colors.purple};
       color:  ${DS.colors.blue};
       opacity: 1;
+    }
+    .page {
+      padding: 8px;
     }
     textarea,
     button {
