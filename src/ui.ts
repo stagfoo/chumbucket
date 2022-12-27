@@ -1,7 +1,7 @@
 import {handleButtonClick} from './actions';
 import html from 'nanohtml';
 import {ROUTES, Route, State} from './store';
-import {notificationStyle} from 'styles';
+import {STYLES, notificationStyle, DS} from './styles';
 
 export function ui(state: State): HTMLElement {
 	return html`
@@ -17,13 +17,13 @@ export function routing(state: State): HTMLElement {
 	switch (state.currentPage) {
 		case 'HOME':
 			return html`
-        <h1>${state.currentPage}</h1>
+        <h1>currentPage: ${state.currentPage}</h1>
         <textarea>${state.bucket}</textarea>
         <button onclick=${handleButtonClick}>Add Meat 🍖</button>
       `;
 		case 'EXAMPLE_FETCH':
 			return html`
-        <h1>${state.currentPage}</h1>
+        <h1>currentPage: ${state.currentPage}</h1>
         <textarea>${state.bucket}</textarea>
         <button onclick=${handleButtonClick}>Add Meat 🍖</button>
       `;
@@ -35,20 +35,20 @@ export function routing(state: State): HTMLElement {
 export function navbar(state: State): HTMLElement {
 	return html`
     <div class="nav">
-      <ul class="row start-xs">
+      <div class="row">
         ${(Object.keys(ROUTES) as Route[]).map(name => {
 		const isActive = state.currentPage === name;
-		return html` <li class="${isActive ? 'active' : ''}">
+		return html` <div class="${isActive ? 'active' : ''}">
             <a class="box" href="${ROUTES[name]}">${isActive ? '#' + name : name}</a>
-          </li>`;
+          </div>`;
 	})}
-      </ul>
+      </div>
     </div>
   `;
 }
 
 function notification(state: State): HTMLElement {
-	notificationStyle();
+  STYLES.add('notificationStyle', notificationStyle(DS), window.document.createElement('style'), true);
 	return html`
     <div class="notification ${state.notification.show ? 'show' : 'hide'}">
       ${state.notification.text}

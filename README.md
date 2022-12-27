@@ -10,6 +10,16 @@
 
 ---
 
+# Get Started
+
+install deps and run developement
+
+```
+nvm use;
+yarn;
+yarn dev;
+```
+
 # Why did we develop this?
 
 - To build quick demo applications and test ideas.
@@ -18,6 +28,7 @@
 - Who needs folders in such small apps
 - Simple entry point if you want to change the UI
 - Good for glitch projects
+- compiles to a single HTML file for easy app webview bundling
 
 # Whats inside
 
@@ -32,3 +43,7 @@
 A bucket for holding a form of bait used to attract sharks
 
 ![jaws chum](https://thumbs.gfycat.com/ForkedAptFurseal-small.gif)
+
+# suggested bundlers
+- [fiskabur 🐡](https://github.com/stagfoo/fiskabur)
+- [android-js](https://android-js.github.io/)
