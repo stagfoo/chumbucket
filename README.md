@@ -47,3 +47,7 @@ A bucket for holding a form of bait used to attract sharks
 # suggested bundlers
 - [fiskabur 🐡](https://github.com/stagfoo/fiskabur)
 - [android-js](https://android-js.github.io/)
+
+# Support Me
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H616GHW)
